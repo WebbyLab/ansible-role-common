@@ -1,0 +1,39 @@
+---
+- name: Update the apt cache
+  apt: update-cache=yes
+
+- name: Install common software
+  apt: name={{item}} state=present
+  with_items:
+    - htop
+    - strace
+    - make
+    - gcc
+    - lsof
+    - vim
+    - curl
+    - git
+    - mc
+    - sysstat
+    - iotop
+    - dstat
+    - iptraf
+    - screen
+
+- name: Set hostname
+  hostname: name={{common_hostname}}
+
+- name: Update hosts - add hostname to /etc/hosts
+  lineinfile: 'line="127.0.0.1 {{common_hostname}}" dest=/etc/hosts state=present'
+
+- name: set locale to en_US.UTF-8
+  command: /usr/sbin/update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+
+
+- name: Set timezone variables
+  copy: content={{common_timezone}} dest=/etc/timezone owner=root group=root mode=0644 backup=yes
+  notify:
+    - update timezone
+
+- name: Allow sudo without password
+  lineinfile: dest=/etc/sudoers state=present regexp='^%sudo\s+ALL\=' line='%sudo ALL=(ALL) NOPASSWD:ALL' validate='visudo -cf %s'
