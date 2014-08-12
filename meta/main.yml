@@ -9,3 +9,5 @@ galaxy_info:
    - name: Ubuntu
   versions:
    - all
+  categories:
+   - system
