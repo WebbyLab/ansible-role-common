@@ -1,6 +1,6 @@
 ---
 - name: Update the apt cache
-  apt: update-cache=yes
+  apt: update-cache=yes cache_valid_time=86400
 
 - name: Install common software
   apt: name={{item}} state=present
