@@ -25,7 +25,7 @@ Role Variables
 
     common_timezone: 'Europe/Kiev'
     common_hostname: 'ubuntu-server'
-
+    common_locale: 'en_US.UTF-8'
 
 Example Playbook
 ----------------
