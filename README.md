@@ -32,7 +32,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: webbylab.common, common_hostname: 'myserver', common_timezone: 'Europe/Kiev' }
+         - { role: WebbyLab.common, common_hostname: 'myserver', common_timezone: 'Europe/Kiev' }
 
 License
 -------
