@@ -18,6 +18,7 @@ Tools:
 - iotop
 - dstat
 - iptraf
+- screen
 - tmux
 - zsh
 
