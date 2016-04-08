@@ -1,7 +1,7 @@
-Role Name
+Ubuntu common role
 =========
 
-Role will setup hostname and timezone and installs standard tools.
+Role will setup hostname and timezone and install standard tools.
 
 Tools:
 
@@ -19,6 +19,8 @@ Tools:
 - dstat
 - iptraf
 - screen
+- tmux
+- zsh
 
 Role Variables
 --------------
